@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 91
 spring:
   application:
-    name: YIIU
+    name: blog
   resources:
     static-locations:
     - classpath:/${site.theme}/static/
@@ -16,9 +16,9 @@ spring:
       template_exception_handler: rethrow
       number_format: 0.##
   datasource:
-    url: jdbc:mysql://localhost/yiiu?useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://txy/yiiu?useSSL=false&characterEncoding=utf8
     username: root
-    password:
+    password: Qazwsx123.98ujiop
   jpa:
     database: mysql
     show-sql: true
@@ -27,12 +27,12 @@ spring:
     properties:
       hibernate.format_sql: false
     open-in-view: false
-#  redis: # 如果redis都是默认配置，下面这些都可以不用配置
-#    host: localhost
-#    password:
-#    port: 6379
-#    ssl: false
-#    database: 0
+  redis: # 如果redis都是默认配置，下面这些都可以不用配置
+    host: txy
+    password: dw123456
+    port: 7000
+    ssl: false
+    database: 0
   mail:
     host: smtp.qq.com
     username: xxoo@qq.com
@@ -45,21 +45,21 @@ spring:
       mail.smtp.starttls.required: true
   servlet:
     multipart:
-      max-file-size: 2MB
+      max-file-size: 10MB
   data:
     elasticsearch:
-      cluster-name: elasticsearch #默认为elasticsearch
-      cluster-nodes: 127.0.0.1:9300 #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode
+      cluster-name: es_cluster #默认为elasticsearch
+      cluster-nodes: txy:9300 #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode
 
 site:
   name: YIIU
   intro: <h5>属于Java语言的bbs</h5><p>在这里，您可以提问，回答，分享，诉说，这是个属于Java程序员的社区，欢迎您的加入！</p>
-  baseUrl: http://localhost:8080/ # 不要忘了后面的 '/'
-  staticUrl: http://localhost:8080/static/images/upload/
+  baseUrl: http://localhost:91/ # 不要忘了后面的 '/'
+  staticUrl: http://localhost:91/static/images/upload/
   pageSize: 20
   uploadPath: ./views/${site.theme}/static/images/upload/
   theme: default
-  search: false
+  search: true
   GA: #Google Analytics ID
   googleZZ: # google站长meta标签content值
   baiduTJ: # 百度统计ID

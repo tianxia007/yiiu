@@ -45,9 +45,11 @@
         toast("请输入标题");
       // } else if(!contentText) {
       //   toast("请输入内容");
-      } else if(!tag) {
+      }
+      else if(!tag) {
         toast("请输入标签");
-      } else {
+      }
+      else {
         $.ajax({
           url: '/api/topic/save',
           type: 'post',
