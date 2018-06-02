@@ -29,6 +29,8 @@ public class SiteConfig {
   private String baiduTJ;
   private String baiduZZ;
   private String uploadType;
+  private String fontName;
+  private boolean yzmOpen;
   private CookieConfig cookie;
   private OAuth2Config oauth2;
 

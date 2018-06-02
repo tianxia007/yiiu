@@ -1,6 +1,7 @@
 package co.yiiu.web.front;
 
 import co.yiiu.config.LogEventConfig;
+import co.yiiu.config.SiteConfig;
 import co.yiiu.core.base.BaseController;
 import co.yiiu.core.util.FreemarkerUtil;
 import co.yiiu.module.log.service.LogService;
@@ -31,6 +32,8 @@ public class CommonController extends BaseController {
   LogEventConfig logEventConfig;
   @Autowired
   LogService logService;
+  @Autowired
+  private SiteConfig siteConfig;
 
   private int width = 120;// 定义图片的width
   private int height = 32;// 定义图片的height
@@ -62,7 +65,7 @@ public class CommonController extends BaseController {
     gd.fillRect(0, 0, width, height);
 
     // 创建字体，字体的大小应该根据图片的高度来定。
-    Font font = new Font("Fixedsys", Font.BOLD, fontHeight);
+    Font font = new Font(siteConfig.getFontName(), Font.BOLD, fontHeight);
     // 设置字体。
     gd.setFont(font);
 
@@ -70,9 +73,9 @@ public class CommonController extends BaseController {
     gd.setColor(Color.BLACK);
     gd.drawRect(0, 0, width - 1, height - 1);
 
-    // 随机产生40条干扰线，使图象中的认证码不易被其它程序探测到。
+    // 随机产生干扰线，使图象中的认证码不易被其它程序探测到。
     gd.setColor(Color.BLACK);
-    for (int i = 0; i < 40; i++) {
+    for (int i = 0; i < 10; i++) {
       int x = random.nextInt(width);
       int y = random.nextInt(height);
       int xl = random.nextInt(20);

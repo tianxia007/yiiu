@@ -65,6 +65,8 @@ site:
   baiduTJ: # 百度统计ID
   baiduZZ: # 百度站长meta标签content值
   uploadType: local # local, qiniu
+  fontName: Times New Roman
+  yzmOpen: false
   cookie:
     domain: 118.24.14.64
     userName: remember-me
